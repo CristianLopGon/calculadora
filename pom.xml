@@ -13,9 +13,18 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>calculadora</name>
 	<description>POC de una calculadora</description>
+	
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	
+	<developers>
+        <developer>
+            <id>CristianLopGon</id>
+            <name>Cristian Lopez</name>
+        </developer>
+    </developers>
+    
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -32,10 +41,56 @@
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-devtools</artifactId>
 	    </dependency>
+	    
+	    <!-- Testing-->
+		<dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.3.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>top.jfunc.common</groupId>
+            <artifactId>converter</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.atsistemas</groupId>
+            <artifactId>tracer</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        
 	</dependencies>
 
 	<build>
 		<plugins>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <groupId>com.atsistemas</groupId>
+                    <artifactId>tracer</artifactId>
+                    <version>1.0.0</version>
+                    <packaging>jar</packaging>
+                    <file>${basedir}/libs/tracer-1.0.0.jar</file>
+                    <generatePom>true</generatePom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>install-jar-lib</id>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
