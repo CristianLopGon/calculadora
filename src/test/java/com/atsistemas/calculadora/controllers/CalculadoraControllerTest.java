@@ -1,10 +1,11 @@
 package com.atsistemas.calculadora.controllers;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -33,8 +34,8 @@ public class CalculadoraControllerTest {
 
 	        ResponseEntity<Double> resultado = restTemplate.getForEntity(uri, Double.class);
 	        
-	        Assert.assertEquals(200, resultado.getStatusCode().value());
-	        Assert.assertEquals(3.0d, resultado.getBody().doubleValue(), 0.001d);      
+	        assertEquals(200, resultado.getStatusCode().value());
+	        assertEquals(3.0d, resultado.getBody().doubleValue(), 0.001d);      
 	        
 	 }
 	 
@@ -49,8 +50,8 @@ public class CalculadoraControllerTest {
 
 	        ResponseEntity<Double> resultado = restTemplate.getForEntity(uri, Double.class);
 	        
-	        Assert.assertEquals(200, resultado.getStatusCode().value());
-	        Assert.assertEquals(3.0d, resultado.getBody().doubleValue(), 0.001d);
+	        assertEquals(200, resultado.getStatusCode().value());
+	        assertEquals(3.0d, resultado.getBody().doubleValue(), 0.001d);
 	 }
 	 
 	 @Test
@@ -64,8 +65,8 @@ public class CalculadoraControllerTest {
 
 	        ResponseEntity<Double> resultado = restTemplate.getForEntity(uri, Double.class);
 	        
-	        Assert.assertEquals(200, resultado.getStatusCode().value());
-	        Assert.assertEquals(6.0d, resultado.getBody().doubleValue(), 0.001d);
+	        assertEquals(200, resultado.getStatusCode().value());
+	        assertEquals(6.0d, resultado.getBody().doubleValue(), 0.001d);
 	 }
 	 
 	 @Test
@@ -79,8 +80,8 @@ public class CalculadoraControllerTest {
 
 	        ResponseEntity<Double> resultado = restTemplate.getForEntity(uri, Double.class);
 	        
-	        Assert.assertEquals(200, resultado.getStatusCode().value());
-	        Assert.assertEquals(3.0d, resultado.getBody().doubleValue(), 0.001d);
+	        assertEquals(200, resultado.getStatusCode().value());
+	        assertEquals(3.0d, resultado.getBody().doubleValue(), 0.001d);
 	 }
 
 }
