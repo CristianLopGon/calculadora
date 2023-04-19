@@ -14,6 +14,7 @@ Este proyecto contiene las librerías tracer en maven.
 ##Instalación
 
 1. Se descargaría el repositorio de GitHub
+> git clone https://github.com/CristianLopGon/calculadora.git
 
 2. Se ejecuta mvn clean install
 
